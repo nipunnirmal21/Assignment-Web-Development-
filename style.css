@@ -1,0 +1,95 @@
+body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        /* Light mode variables */
+        body.light-mode {
+            --bg-color: #f3f4f6; /* Gray-100 */
+            --text-color: #1f2937; /* Gray-800 */
+            --card-bg: #ffffff;
+            --border-color: #e5e7eb; /* Gray-200 */
+            --input-bg: #f9fafb; /* Gray-50 */
+            --button-bg: #4f46e5; /* Indigo-600 */
+            --button-text: #ffffff;
+            --link-color: #4f46e5;
+        }
+        /* Dark mode variables */
+        body.dark-mode {
+            --bg-color: #111827; /* Gray-900 */
+            --text-color: #e5e7eb; /* Gray-200 */
+            --card-bg: #1f2937; /* Gray-800 */
+            --border-color: #374151; /* Gray-700 */
+            --input-bg: #374151; /* Gray-700 */
+            --button-bg: #6366f1; /* Indigo-500 */
+            --button-text: #ffffff;
+            --link-color: #818cf8; /* Indigo-400 */
+        }
+        .container-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align content to the top */
+            padding: 2rem;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+        }
+        input, textarea {
+            background-color: var(--input-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+        }
+        button {
+            background-color: var(--button-bg);
+            color: var(--button-text);
+        }
+        a {
+            color: var(--link-color);
+        }
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: var(--card-bg);
+            margin: auto;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            width: 80%;
+            max-width: 500px;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            text-align: center;
+        }
+        .close-button {
+            color: var(--text-color);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
