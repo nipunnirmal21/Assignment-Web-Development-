@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Web Application</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link to common CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-mode">
+    <div class="container-wrapper">
+        <!-- Navigation Bar -->
+        <nav class="bg-indigo-600 p-4 shadow-lg">
+            <div class="container mx-auto flex justify-between items-center">
+                <a href="index.html" class="text-white text-2xl font-bold">Web App</a>
+                <div class="space-x-4">
+                    <a href="index.html" class="text-white hover:text-indigo-200 transition duration-300">Home</a>
+                    <a href="register.html" class="text-white hover:text-indigo-200 transition duration-300">Register</a>
+                    <a href="login.html" class="text-white hover:text-indigo-200 transition duration-300">Login</a>
+                    <a href="profile.html" class="text-white hover:text-indigo-200 transition duration-300">Profile</a>
+                    <a href="contact.html" class="text-white hover:text-indigo-200 transition duration-300">Contact</a>
+                    <!-- Light/Dark Mode Toggle -->
+                    <button id="themeToggle" class="bg-indigo-700 text-white px-3 py-1 rounded-full text-sm hover:bg-indigo-800 transition duration-300">
+                        Toggle Theme
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content" style="align-items: center;">
+            <section id="profile-page" class="p-8 rounded-lg shadow-xl card max-w-2xl w-full">
+                <h2 class="text-3xl font-bold mb-6 text-center">Student Profile</h2>
+                <!-- This section would dynamically display user data after successful login -->
+                <!-- PHP: Example of how PHP would display user data -->
+                <?php
+                    // Example PHP logic for profile page (requires session management)
+                    // session_start(); // Start the session to access session variables
+
+                    // // Check if the user is logged in
+                    // if (isset($_SESSION['user_email'])) {
+                    //     $user_email = $_SESSION['user_email'];
+                    //     $user_name = $_SESSION['user_name'] ?? 'N/A'; // Get name from session or database
+
+                    //     echo '<div class="space-y-4">';
+                    //     echo '<p class="text-lg"><strong>Name:</strong> <span id="profileName">' . htmlspecialchars($user_name) . '</span></p>';
+                    //     echo '<p class="text-lg"><strong>Email:</strong> <span id="profileEmail">' . htmlspecialchars($user_email) . '</span></p>';
+                    //     echo '<p class="text-lg"><strong>Status:</strong> <span id="profileStatus" class="text-green-600">Logged In</span></p>';
+                    //     echo '</div>';
+                    // } else {
+                    //     // User is not logged in, redirect to login page or display a message
+                    //     // header('Location: login.html?redirect=profile'); // Redirect example
+                    //     // exit();
+                    //     echo '<div class="space-y-4">';
+                    //     echo '<p class="text-lg"><strong>Name:</strong> <span id="profileName">N/A</span></p>';
+                    //     echo '<p class="text-lg"><strong>Email:</strong> <span id="profileEmail">N/A</span></p>';
+                    //     echo '<p class="text-lg"><strong>Status:</strong> <span id="profileStatus" class="text-gray-500 italic">Not logged in. Please <a href="login.html" class="text-indigo-600 hover:underline">login</a> to view your profile.</span></p>';
+                    //     echo '</div>';
+                    // }
+                ?>
+                <!-- Fallback/Placeholder for client-side only view -->
+                <div class="space-y-4">
+                    <p class="text-lg"><strong>Name:</strong> <span id="profileName">N/A</span></p>
+                    <p class="text-lg"><strong>Email:</strong> <span id="profileEmail">N/A</span></p>
+                    <p class="text-lg"><strong>Status:</strong> <span id="profileStatus" class="text-gray-500 italic">Not logged in or no profile data available.</span></p>
+                    <p class="text-lg mt-4">
+                        <em>(This data would typically be loaded from a backend database after successful login.)</em>
+                    </p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- Link to common JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // Apply theme and set up toggle on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            applyTheme();
+            setupThemeToggle();
+            // In a real application, this page would fetch user data from the backend
+            // and update profileName, profileEmail, profileStatus based on logged-in user.
+            // For now, it remains static until backend integration.
+        });
+    </script>
+</body>
+</html>
